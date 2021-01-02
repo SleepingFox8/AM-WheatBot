@@ -1,7 +1,7 @@
 -- initialization
     -- import dependancies
-        local botTools = require ("AM-tools/botTools")
-        local compTools = require ("AM-tools/compTools")
+        local botTools = require ("AM-Tools/botTools")
+        local compTools = require ("AM-Tools/compTools")
     -- prepair table for holding exported functions
         local wheatBot = { _version = "0.0.0" }
 
