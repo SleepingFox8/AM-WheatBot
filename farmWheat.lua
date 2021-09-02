@@ -25,7 +25,17 @@
                 return 0
         end
 
+    -- set farm size
+        MAIN.player = getPlayer()
+        MAIN.xpos = math.floor(MAIN.player.pos[1])
+        MAIN.farmx = (1602 - MAIN.xpos) + 1
+        MAIN.farmz = 108
 
+        --DEBUG
+            -- MAIN.farmz = 5
+            -- MAIN.farmx = 4
+
+    -- harvest farm
         log("&7[&6Bots&7] &6* &aStarting Harvest")
-        wheatBot.harvestField()
-        log("Harvest completed...")
+        wheatBot.harvestField(MAIN.farmx, MAIN.farmz)
+        log("&7[&6Bots&7] &6* &aHarvest completed...")

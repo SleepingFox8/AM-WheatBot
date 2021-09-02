@@ -74,28 +74,19 @@
         -- sleep(250)
     end
 
-    function wheatBot.harvestField()
+    function wheatBot.harvestField(farmx, farmz)
         -- function initialization
             -- declare table to hold all FUNC scoped variables in
                 local FUNC = {}
+            -- store func args in scope-safe table
+                FUNC.farmx = farmx
+                FUNC.farmz = farmz
 
         -- get FUNC.player information
             FUNC.player = getPlayer()
             FUNC.xpos = math.floor(FUNC.player.pos[1])
             FUNC.ypos = math.floor(FUNC.player.pos[2])
             FUNC.zpos = math.floor(FUNC.player.pos[3])
-        --farm presets
-            --Our Farm
-                FUNC.farmz = 108 -- z of farm 
-                -- FUNC.farmx = 54 -- x of farm 
-                FUNC.farmx = (1602 - FUNC.xpos) + 1
-            --DEBUG
-                -- FUNC.farmz = 5
-                -- FUNC.farmx = 2
-            --Benny's
-                -- FUNC.farmz = 72
-                -- FUNC.farmx = 108
-
 
             FUNC.workSlot = 2
 
