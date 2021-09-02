@@ -1,7 +1,14 @@
 -- initialization
+    -- ensure imports are from file instead of cache
+        local function import(path)
+            package.loaded[path] = nil
+            local imported = require (path)
+            package.loaded[path] = nil
+            return imported
+        end
     -- import dependancies
-        local botTools = require ("AM-Tools/botTools")
-        local compTools = require ("AM-Tools/compTools")
+        local botTools = import("AM-BotTools/botTools")
+        local compTools = import("AM-CompTools/compTools")
     -- prepair table for holding exported functions
         local wheatBot = { _version = "0.0.0" }
 
@@ -109,14 +116,14 @@
                                 for z=FUNC.zorigin, FUNC.zorigin - FUNC.farmz+1,-1 do
                                     getToTarget(z,x)
                                     harvestAndReplant()
-                                    botTools.eatIfHungery()
+                                    botTools.eatIfHungry()
                                 end
                         -- south
                             else
                                 for z= FUNC.zorigin - FUNC.farmz+1, FUNC.zorigin, 1 do
                                     getToTarget(z,x)
                                     harvestAndReplant()
-                                    botTools.eatIfHungery()
+                                    botTools.eatIfHungry()
                                 end
                                 sleep(100)
                                 offload()
