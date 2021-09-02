@@ -1,2 +1,2 @@
-local botTools = import("AM-Tools/botTools")
+local botTools = import("AM-BotTools/botTools")
 botTools.dropAllOfItemExcept("minecraft:wheat_seeds",3)

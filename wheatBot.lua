@@ -7,7 +7,7 @@
             return imported
         end
     -- import dependancies
-        local botTools = import("AM-BoTools/botTools")
+        local botTools = import("AM-BotTools/botTools")
         local compTools = import("AM-CompTools/compTools")
     -- prepair table for holding exported functions
         local wheatBot = { _version = "0.0.0" }
